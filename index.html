@@ -1,0 +1,84 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Advanced Modern Login & Registration</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-container">
+      <div class="auth-header">
+        <h1 class="auth-title">Welcome</h1>
+        <p class="auth-subtitle">Create an account or log in to continue</p>
+      </div>
+
+      <div class="form-toggle">
+        <button id="show-register" class="toggle-btn active">Register</button>
+        <button id="show-login" class="toggle-btn">Login</button>
+      </div>
+
+      <form id="register-form" class="auth-form active" novalidate>
+        <div class="input-group">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" name="name" placeholder="John Doe" required autocomplete="name" />
+          <small class="error-msg"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+          <small class="error-msg"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" name="password" placeholder="Create a strong password" required autocomplete="new-password" />
+          <meter max="4" id="password-strength-meter"></meter>
+          <small id="password-strength-text"></small>
+          <small class="error-msg"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="reg-confirm-password">Confirm Password</label>
+          <input type="password" id="reg-confirm-password" name="confirm_password" placeholder="Re-enter your password" required autocomplete="new-password" />
+          <small class="error-msg"></small>
+        </div>
+
+        <div class="input-group checkbox-group">
+          <input type="checkbox" id="terms" required />
+          <label for="terms">I agree to the <a href="#" target="_blank">Terms & Conditions</a></label>
+          <small class="error-msg"></small>
+        </div>
+
+        <button type="submit" class="btn-primary">Create Account</button>
+      </form>
+
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="input-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+          <small class="error-msg"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" placeholder="Enter your password" required autocomplete="current-password" />
+          <small class="error-msg"></small>
+        </div>
+
+        <div class="input-group checkbox-group">
+          <input type="checkbox" id="remember-me" />
+          <label for="remember-me">Remember me</label>
+        </div>
+
+        <button type="submit" class="btn-primary">Log In</button>
+
+        <p class="forgot-password"><a href="#">Forgot password?</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
