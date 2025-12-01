@@ -7,6 +7,11 @@ const passwordInput = document.getElementById('reg-password');
 const passwordMeter = document.getElementById('password-strength-meter');
 const passwordStrengthText = document.getElementById('password-strength-text');
 
+fetch("http://localhost:8000/api/login/")
+  .then(res => res.json())
+  .then(data => console.log(data));
+
+
 function setActiveForm(formToShow) {
   if (formToShow === 'register') {
     registerForm.classList.add('active');
