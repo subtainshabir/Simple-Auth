@@ -90,6 +90,17 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+// frontend/script.js
+async function login(username, password) {
+  const response = await fetch("http://localhost:8000/api/login/", {   // use host:port for browser
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password })
+  });
+  return response.json();
+}
+
+
 registerForm.addEventListener('submit', (e) => {
   e.preventDefault();
 

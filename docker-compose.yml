@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  frontend:
+    image: simple-auth-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend # if you used Dockerfile.frontend, otherwise change
+    ports:
+      - "8080:80"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app            # map code so edits reflect instantly
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_SECRET_KEY=replace_me_in_prod
+    command: python manage.py runserver 0.0.0.0:8000
